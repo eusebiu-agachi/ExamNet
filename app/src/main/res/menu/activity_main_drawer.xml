@@ -5,16 +5,23 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_register"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Înreagistrează-te"/>
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_baseline_person"
+            android:title="Autentifică-te"/>
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_quiz"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="Fă un test" />
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Trimite-ne un mesaj"/>
     </group>
 </menu>

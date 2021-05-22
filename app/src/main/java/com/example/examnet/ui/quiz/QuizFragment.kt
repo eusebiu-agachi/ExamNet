@@ -17,7 +17,7 @@ import com.example.examnet.ui.domenii.Informatica.Informatica
 import com.example.examnet.ui.domenii.ItemsAdapter
 import com.example.examnet.ui.domenii.ItemsModel
 import com.example.examnet.ui.domenii.Matematica.Matematica
-import kotlinx.android.synthetic.main.fragment_domenii.*
+import kotlinx.android.synthetic.main.fragment_quiz.*
 
 class QuizFragment : Fragment(R.layout.fragment_quiz), ItemsAdapter.ClickListener {
     private lateinit var quizViewModel: QuizViewModel

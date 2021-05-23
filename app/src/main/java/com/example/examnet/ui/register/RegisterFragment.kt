@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
+import com.example.examnet.ui.register.registerModel.registerPost
+import com.example.examnet.ui.register.registerRepository.rgstrRepository
 import kotlinx.android.synthetic.main.fragment_register.*
 
 class RegisterFragment : Fragment() {
@@ -24,9 +26,11 @@ class RegisterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        registerViewModel =
-            ViewModelProvider(this).get(RegisterViewModel::class.java)
+        val repository = rgstrRepository();
+        val viewModelFactory = registerViewModelFactory(repository)
+        registerViewModel = ViewModelProvider(this, viewModelFactory).get(RegisterViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_register, container, false)
+
         val textView: TextView = root.findViewById(R.id.text_register)
         registerViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
@@ -50,7 +54,20 @@ class RegisterFragment : Fragment() {
 
             val textView = view.findViewById<TextView>(R.id.text_register)
 
-            Log.d("asd", continut1)
+            var myPost = registerPost(username = continut1, email = continut2, password = continut3)
+            registerViewModel.pushPost(myPost)
+            registerViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
+                if(response.isSuccessful){
+                    Toast.makeText(activity, textView.text, Toast.LENGTH_LONG).show()
+                    Log.d("Response", response.code().toString())
+                    Log.d("Response body", response.body().toString())
+                } else{
+                    Log.d("Response", response.errorBody().toString())
+                    textView.text = response.code().toString()
+                    Toast.makeText(activity, textView.text, Toast.LENGTH_LONG).show()
+                }
+            })
+
         }
     }
 }

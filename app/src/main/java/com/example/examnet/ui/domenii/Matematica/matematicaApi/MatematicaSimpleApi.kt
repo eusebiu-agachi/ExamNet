@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface MatematicaSimpleApi {
 
-    @GET("http://89.137.141.228:8080/problem")
+    @GET("http://89.137.141.228:8080/matematica")
     suspend fun getInformations(): Response<List<MatematicaResponse>>
 }

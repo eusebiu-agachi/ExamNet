@@ -28,8 +28,7 @@ class LoginFragment : Fragment() {
     ): View? {
         val repository = lgnRepository()
         val viewModelFactory = loginViewModelFactory(repository)
-        loginViewModel =
-            ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+        loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_login, container, false)
         val textView: TextView = root.findViewById(R.id.text_login)
         loginViewModel.text.observe(viewLifecycleOwner, Observer {

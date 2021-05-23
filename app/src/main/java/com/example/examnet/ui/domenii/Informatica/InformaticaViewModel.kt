@@ -17,11 +17,18 @@ class InformaticaViewModel(private val informaticaRepository: InformaticaReposit
     val text: LiveData<String> = _text
 
     val myResponse: MutableLiveData<Response<List<InformaticaResponse>>> = MutableLiveData()
+    val myResponse2 : MutableLiveData<Response<Int>> = MutableLiveData()
 
     fun getPost() {
         viewModelScope.launch {
             val response = informaticaRepository.getInformations()
             myResponse.value = response
+        }
+    }
+    fun pushPost(post : ArrayList<String>) {
+        viewModelScope.launch {
+            val response = informaticaRepository.pushPost(post)
+            myResponse2.value = response
         }
     }
 }

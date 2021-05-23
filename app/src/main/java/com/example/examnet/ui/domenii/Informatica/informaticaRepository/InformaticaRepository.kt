@@ -9,4 +9,7 @@ class InformaticaRepository {
     suspend fun getInformations(): Response<List<InformaticaResponse>> {
         return InformaticaRetrofitInstance.api.getInformations()
     }
+    suspend fun pushPost(post : ArrayList<String>): Response<Int>{
+        return InformaticaRetrofitInstance.api2.pushPost(post)
+    }
 }

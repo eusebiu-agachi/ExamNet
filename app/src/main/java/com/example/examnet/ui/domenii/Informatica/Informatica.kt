@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
+import com.example.examnet.ui.domenii.Biologie.BiologieViewModel
 import com.example.examnet.ui.domenii.Informatica.informaticaModel.InformaticaResponse
 import com.example.examnet.ui.domenii.Informatica.informaticaRepository.InformaticaRepository
 import kotlinx.android.synthetic.main.activity_item1.*
@@ -22,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_item1.*
 class Informatica : AppCompatActivity() {
 
     private lateinit var viewModel : InformaticaViewModel
+    private lateinit var viewModel2 : InformaticaViewModel
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -30,19 +32,21 @@ class Informatica : AppCompatActivity() {
 
         val repository = InformaticaRepository()
         val viewModelFactory = InformaticaViewModelFactory(repository)
+        val viewModelFactory2 = InformaticaViewModelFactory2(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(InformaticaViewModel::class.java)
+        viewModel2 = ViewModelProvider(this, viewModelFactory2).get(InformaticaViewModel::class.java)
         viewModel.getPost()
         val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "")
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
-                val problemsArray : List<Any> = response.body() as List<Any>
+                val problemsArray: List<Any> = response.body() as List<Any>
                 for (i in problemsArray.indices) {
                     Log.d(i.toString(), problemsArray[i].toString())
                 }
 
                 enuntProblema1.text = (problemsArray[0] as InformaticaResponse).enunt
                 var array = (problemsArray[0] as InformaticaResponse).variante.split(",")
-                var rgp : RadioGroup = findViewById(R.id.groupProblema1)
+                var rgp: RadioGroup = findViewById(R.id.groupProblema1)
                 var buttons = array.size
                 for (i in 0 until buttons) {
                     val rbn = RadioButton(this)
@@ -52,7 +56,7 @@ class Informatica : AppCompatActivity() {
                     rbn.buttonTintList = ColorStateList.valueOf(getColor(R.color.darker_gray))
                     rgp.addView(rbn)
                 }
-                rgp.setOnCheckedChangeListener{ group, checkedId ->
+                rgp.setOnCheckedChangeListener { group, checkedId ->
                     val radioButton : RadioButton = findViewById(checkedId)
                     responsesArray[0] = radioButton.text as String
                 }
@@ -215,6 +219,14 @@ class Informatica : AppCompatActivity() {
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
         buttonConfirm.setOnClickListener {
             Log.d("test", responsesArray.toString())
+            viewModel2.pushPost(responsesArray)
+            viewModel2.myResponse2.observe(this, Observer { response ->
+                if(response.isSuccessful) {
+                    Log.d("yey", response.code().toString())
+                    Log.d("scor", response.body().toString())
+                    Toast.makeText(this, response.body().toString(), Toast.LENGTH_LONG).show()
+                }
+            })
         }
     }
 }

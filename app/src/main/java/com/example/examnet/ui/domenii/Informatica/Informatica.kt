@@ -1,5 +1,6 @@
 package com.example.examnet.ui.domenii.Informatica
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
@@ -227,6 +228,9 @@ class Informatica : AppCompatActivity() {
                     Toast.makeText(this, response.body().toString(), Toast.LENGTH_LONG).show()
                 }
             })
+            val intent : Intent = this.intent
+            finish()
+            startActivity(intent)
         }
     }
 }

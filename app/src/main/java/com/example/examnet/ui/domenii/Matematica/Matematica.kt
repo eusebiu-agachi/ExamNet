@@ -1,5 +1,6 @@
 package com.example.examnet.ui.domenii.Matematica
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
@@ -215,6 +216,9 @@ class Matematica : AppCompatActivity() {
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
         buttonConfirm.setOnClickListener {
             Log.d("test", responsesArray.toString())
+            val intent : Intent = this.intent
+            finish()
+            startActivity(intent)
         }
     }
 }

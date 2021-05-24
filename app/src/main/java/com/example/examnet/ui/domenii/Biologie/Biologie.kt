@@ -1,5 +1,6 @@
 package com.example.examnet.ui.domenii.Biologie
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
@@ -18,6 +19,7 @@ import com.example.examnet.R
 import com.example.examnet.ui.domenii.Biologie.biologieModel.BiologieResponse
 import com.example.examnet.ui.domenii.Biologie.biologieRepository.BiologieRepository
 import kotlinx.android.synthetic.main.activity_item1.*
+
 
 class Biologie : AppCompatActivity() {
 
@@ -224,7 +226,9 @@ class Biologie : AppCompatActivity() {
                     Toast.makeText(this, response.body().toString(), Toast.LENGTH_LONG).show()
                 }
             })
-
+            val intent : Intent = this.intent
+            finish()
+            startActivity(intent)
         }
     }
 

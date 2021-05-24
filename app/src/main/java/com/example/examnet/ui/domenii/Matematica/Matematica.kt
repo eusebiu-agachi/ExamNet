@@ -10,11 +10,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
+import com.example.examnet.ui.domenii.Informatica.InformaticaViewModel
 import com.example.examnet.ui.domenii.Matematica.matematicaModel.MatematicaResponse
 import com.example.examnet.ui.domenii.Matematica.matematicaRepository.MatematicaRepository
 import kotlinx.android.synthetic.main.activity_item1.*
@@ -22,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_item1.*
 class Matematica : AppCompatActivity() {
 
     private lateinit var viewModel : MatematicaViewModel
-
+    private lateinit var viewModel2 : MatematicaViewModel
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -31,7 +33,9 @@ class Matematica : AppCompatActivity() {
 
         val repository = MatematicaRepository()
         val viewModelfactory = MatematicaViewModelFactory(repository)
+        val viewModelfactory2 = MatematicaViewModelFactory2(repository)
         viewModel = ViewModelProvider(this, viewModelfactory).get(MatematicaViewModel::class.java)
+        viewModel2 = ViewModelProvider(this, viewModelfactory2).get(MatematicaViewModel::class.java)
         viewModel.getPost()
         val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "")
         viewModel.myResponse.observe(this, Observer { response ->
@@ -216,6 +220,14 @@ class Matematica : AppCompatActivity() {
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
         buttonConfirm.setOnClickListener {
             Log.d("test", responsesArray.toString())
+            viewModel2.pushPost(responsesArray)
+            viewModel2.myResponse2.observe(this, Observer { response ->
+                if(response.isSuccessful) {
+                    Log.d("yey", response.code().toString())
+                    Log.d("scor", response.body().toString())
+                    Toast.makeText(this, response.body().toString(), Toast.LENGTH_LONG).show()
+                }
+            })
             val intent : Intent = this.intent
             finish()
             startActivity(intent)

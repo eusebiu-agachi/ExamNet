@@ -17,11 +17,18 @@ class MatematicaViewModel(private val matematicaRepository: MatematicaRepository
     val text: LiveData<String> = _text
 
     val myResponse: MutableLiveData<Response<List<MatematicaResponse>>> = MutableLiveData()
+    val myResponse2 : MutableLiveData<Response<Int>> = MutableLiveData()
 
     fun getPost() {
         viewModelScope.launch {
             val response = matematicaRepository.getInformations()
             myResponse.value = response
+        }
+    }
+    fun pushPost(post : ArrayList<String>) {
+        viewModelScope.launch {
+            val response = matematicaRepository.pushPost(post)
+            myResponse2.value = response
         }
     }
 }

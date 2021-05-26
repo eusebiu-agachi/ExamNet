@@ -16,8 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
+import com.example.examnet.StaticClass
 import com.example.examnet.ui.domenii.Biologie.biologieModel.BiologieResponse
 import com.example.examnet.ui.domenii.Biologie.biologieRepository.BiologieRepository
+import com.example.examnet.ui.score.Score
 import kotlinx.android.synthetic.main.activity_item1.*
 
 
@@ -217,18 +219,19 @@ class Biologie : AppCompatActivity() {
         })
 
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
+        var score: String
         buttonConfirm.setOnClickListener {
             viewModel2.pushPost(responsesArray)
             viewModel2.myResponse2.observe(this, Observer { response ->
                 if(response.isSuccessful) {
                     Log.d("yey", response.code().toString())
                     Log.d("scor", response.body().toString())
-                    Toast.makeText(this, response.body().toString(), Toast.LENGTH_LONG).show()
+                    score = response.body().toString()
+
+                    StaticClass.value = score
+                    startActivity(Intent(this, Score::class.java))
                 }
             })
-            val intent : Intent = this.intent
-            finish()
-            startActivity(intent)
         }
     }
 

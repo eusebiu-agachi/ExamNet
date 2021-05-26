@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/darker_gray">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/titlu_scor"
+        android:layout_height="wrap_content"
+        android:text="Felicitări!"
+        android:textColor="#e63946"
+        android:layout_marginTop="200dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/informatii_scor"
+        android:text="Tocmai ai finalizat testul cu succes! Punctajul tău este:"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:padding="20dp"
+        android:textColor="#22223b"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlu_scor"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:text=""
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="#e63946"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/informatii_scor"/>
+
+    <Button
+        android:id="@+id/confirm_score"
+        android:layout_width="145dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:text="Acasă"
+        app:backgroundTint="#6c757d"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score"/>
+
+    <ImageView
+        android:id="@+id/confetii_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/confetti"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

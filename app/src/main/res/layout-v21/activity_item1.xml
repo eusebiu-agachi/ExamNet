@@ -229,6 +229,33 @@
             app:layout_constraintTop_toBottomOf="@id/enuntProblema10">
         </RadioGroup>
 
+        <TextView
+            android:id="@+id/enuntProblema11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/groupProblema10"
+            />
+
+        <EditText
+            android:id="@+id/raspunsProblema11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="Adaugă răspunsul..."
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema11"/>
+
         <Button
             android:id="@+id/confirm_problem"
             android:layout_width="200dp"
@@ -241,7 +268,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/groupProblema10" />
+            app:layout_constraintTop_toBottomOf="@+id/raspunsProblema11" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

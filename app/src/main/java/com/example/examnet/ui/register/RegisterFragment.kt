@@ -43,13 +43,8 @@ class RegisterFragment : Fragment() {
 
         val buttonConfirm = view.findViewById<Button>(R.id.singIn_register)
         buttonConfirm.setOnClickListener {
-            val textBox1 = view.findViewById<EditText>(R.id.username_register)
             var continut1 = username_register.text.toString()
-
-            val textBox2 = view.findViewById<EditText>(R.id.email_register)
             var continut2 = email_register.text.toString()
-
-            val textBox3 = view.findViewById<EditText>(R.id.password_register)
             var continut3 = password_register.text.toString()
 
             val textView = view.findViewById<TextView>(R.id.text_register)
@@ -58,16 +53,15 @@ class RegisterFragment : Fragment() {
             registerViewModel.pushPost(myPost)
             registerViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
                 if(response.isSuccessful){
-                    Toast.makeText(activity, textView.text, Toast.LENGTH_LONG).show()
+                    mesaj_register.text = "Înregistrare efectuată cu succes!"
                     Log.d("Response", response.code().toString())
                     Log.d("Response body", response.body().toString())
                 } else{
                     Log.d("Response", response.errorBody().toString())
+                    mesaj_register.text = "Adresa de email este deja utilizată!"
                     textView.text = response.code().toString()
-                    Toast.makeText(activity, textView.text, Toast.LENGTH_LONG).show()
                 }
             })
-
         }
     }
 }

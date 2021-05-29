@@ -63,7 +63,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Login"
+                android:text="Autentificare"
                 android:textSize="25sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -72,7 +72,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:hint="Username">
+                android:hint="Adresa de email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_login"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Password">
+                android:hint="Parola">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_login"
@@ -103,7 +103,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:gravity="end"
-                android:text="Forgot Password?"
+                android:text="Ai uitat parola?"
                 android:textColor="#3F51B5" />
 
         </LinearLayout>
@@ -124,6 +124,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mesaj_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/singIn_login"/>
 
     <Button
         android:id="@+id/singIn_login"

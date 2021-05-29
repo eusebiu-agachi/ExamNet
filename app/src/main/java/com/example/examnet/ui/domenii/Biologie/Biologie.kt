@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -39,7 +38,7 @@ class Biologie : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(BiologieViewModel::class.java)
         viewModel2 = ViewModelProvider(this, viewModelFactory2).get(BiologieViewModel::class.java)
         viewModel.getPost()
-        val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "")
+        val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "", "")
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 val problemsArray: List<Any> = response.body() as List<Any>
@@ -215,12 +214,15 @@ class Biologie : AppCompatActivity() {
                     val radioButton: RadioButton = findViewById(checkedId)
                     responsesArray[9] = radioButton.text as String
                 }
+
+                enuntProblema11.text = (problemsArray[10] as BiologieResponse).enunt
             }
         })
 
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
         var score: String
         buttonConfirm.setOnClickListener {
+            responsesArray[10] = raspunsProblema11.text.toString()
             viewModel2.pushPost(responsesArray)
             viewModel2.myResponse2.observe(this, Observer { response ->
                 if(response.isSuccessful) {
@@ -234,5 +236,4 @@ class Biologie : AppCompatActivity() {
             })
         }
     }
-
 }

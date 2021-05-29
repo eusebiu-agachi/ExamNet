@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
@@ -37,7 +38,7 @@ class Matematica : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelfactory).get(MatematicaViewModel::class.java)
         viewModel2 = ViewModelProvider(this, viewModelfactory2).get(MatematicaViewModel::class.java)
         viewModel.getPost()
-        val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "")
+        val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "", "")
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 val problemsArray : List<Any> = response.body() as List<Any>
@@ -214,18 +215,21 @@ class Matematica : AppCompatActivity() {
                     val radioButton : RadioButton = findViewById(checkedId)
                     responsesArray[9] = radioButton.text as String
                 }
+
+                enuntProblema11.text = (problemsArray[10] as MatematicaResponse).enunt
             }
         })
 
         val buttonConfirm = findViewById<Button>(R.id.confirm_problem)
         var score: String
         buttonConfirm.setOnClickListener {
-            Log.d("test", responsesArray.toString())
+            responsesArray[10] = raspunsProblema11.text.toString()
             viewModel2.pushPost(responsesArray)
             viewModel2.myResponse2.observe(this, Observer { response ->
                 if(response.isSuccessful) {
                     Log.d("yey", response.code().toString())
                     Log.d("scor", response.body().toString())
+                    Log.d("raspunsuri", responsesArray.toString())
                     score = response.body().toString()
 
                     StaticClass.value = score

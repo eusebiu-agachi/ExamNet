@@ -42,24 +42,30 @@ class LoginFragment : Fragment() {
 
         val buttonConfirm = view.findViewById<Button>(R.id.singIn_login)
         buttonConfirm.setOnClickListener{
-            var textBox1 = view.findViewById<EditText>(R.id.email_login)
-            var textBox2 = view.findViewById<EditText>(R.id.password_login)
-
             var continut1 = email_login.text.toString()
             var continut2 = password_login.text.toString()
 
             val textView = view.findViewById<TextView>(R.id.text_login)
 
+            continut1.replace(" ", "")
+            continut2.replace(" ", "")
+
             val myPost = loginPost(email = continut1, password = continut2)
             loginViewModel.pushPost(myPost)
             loginViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
                 if (response.isSuccessful){
-                    Log.d("Response", response.code().toString())
-                    Log.d("raspuns", response.body().toString())
-                    Toast.makeText(activity, "Autentificare reușită", Toast.LENGTH_LONG).show()
+                    if (response.body().toString() == "1"){
+                        mesaj_login.text = "Autentificare efectuată cu succes!"
+                        Log.d("Response", response.code().toString())
+                        Log.d("raspuns", response.body().toString())
+                    }
+                    else if (response.body().toString() == "0"){
+                        mesaj_login.text = "Contul nu există!"
+                        Log.d("Response", response.code().toString())
+                        Log.d("raspuns", response.body().toString())
+                    }
                 }
             })
         }
     }
-
 }

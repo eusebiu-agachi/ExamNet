@@ -5,19 +5,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="#a9d6e5">
+
+        <TextView
+            android:id="@+id/informations_register"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="46dp"
+            android:layout_marginBottom="1419dp"
+            android:gravity="center"
+            android:text="Raspunde la urmatoarele intrebari si trimite raspunsurile pentru a vedea la cate ai raspuns corect!"
+            android:textColor="#14213d"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.603"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/enuntProblema1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="160dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,19 +48,17 @@
             android:id="@+id/groupProblema1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema1">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema1"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,19 +68,17 @@
             android:id="@+id/groupProblema2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema2">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema2"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,19 +88,17 @@
             android:id="@+id/groupProblema3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema3">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema3"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,19 +108,17 @@
             android:id="@+id/groupProblema4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema4">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema4"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,19 +128,17 @@
             android:id="@+id/groupProblema5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema5">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema5"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,19 +148,17 @@
             android:id="@+id/groupProblema6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema6">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema6"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,19 +168,17 @@
             android:id="@+id/groupProblema7"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema7">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema7"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,19 +188,17 @@
             android:id="@+id/groupProblema8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema8">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema8"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -203,19 +208,17 @@
             android:id="@+id/groupProblema9"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema9">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema9"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -225,36 +228,33 @@
             android:id="@+id/groupProblema10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema10">
-        </RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema10"></RadioGroup>
 
         <TextView
             android:id="@+id/enuntProblema11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:padding="20dp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/groupProblema10"
-            />
+            app:layout_constraintTop_toBottomOf="@id/groupProblema10" />
 
         <EditText
             android:id="@+id/raspunsProblema11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:hint="Adaugă răspunsul..."
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema11"/>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema11" />
 
         <Button
             android:id="@+id/confirm_problem"
@@ -263,7 +263,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
             android:text="Trimite testul"
-            app:backgroundTint="#319BDB"
+            app:backgroundTint="#00319BDB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

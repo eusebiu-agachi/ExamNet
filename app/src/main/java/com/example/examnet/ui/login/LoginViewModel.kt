@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.examnet.ui.login.loginModel.loginPost
+import com.example.examnet.ui.login.loginModel.loginResponse
 import com.example.examnet.ui.login.loginRepository.lgnRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -16,7 +17,7 @@ class LoginViewModel(private val repository : lgnRepository) : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    val myResponse: MutableLiveData<Response<Int>> = MutableLiveData()
+    val myResponse: MutableLiveData<Response<loginResponse>> = MutableLiveData()
 
     fun pushPost(post : loginPost) {
         viewModelScope.launch {

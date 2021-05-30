@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
+import com.example.examnet.StaticClass
 import com.example.examnet.ui.login.loginModel.loginPost
 import com.example.examnet.ui.login.loginRepository.lgnRepository
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -54,16 +55,21 @@ class LoginFragment : Fragment() {
             loginViewModel.pushPost(myPost)
             loginViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
                 if (response.isSuccessful){
-                    if (response.body().toString() == "1"){
-                        mesaj_login.text = "Autentificare efectuată cu succes!"
-                        Log.d("Response", response.code().toString())
-                        Log.d("raspuns", response.body().toString())
+                    mesaj_login.text = "Autentificare efectuată cu succes!"
+                    Log.d("Response", response.code().toString())
+                    Log.d("parola", response.body()?.password.toString())
+                    Log.d("email", response.body()?.email.toString())
+                    Log.d("username", response.body()?.username.toString())
+                    Log.d("scor", response.body()?.score.toString())
+
+                    StaticClass.email = response.body()?.email.toString()
+                    StaticClass.username = response.body()?.username.toString()
+                    StaticClass.scor = response.body()?.score.toString()
                     }
-                    else if (response.body().toString() == "0"){
-                        mesaj_login.text = "Contul nu există!"
-                        Log.d("Response", response.code().toString())
-                        Log.d("raspuns", response.body().toString())
-                    }
+                else{
+                    mesaj_login.text = "Contul nu există!"
+                    Log.d("Response", response.code().toString())
+                    Log.d("raspuns", response.body().toString())
                 }
             })
         }

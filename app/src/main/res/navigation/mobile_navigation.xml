@@ -28,4 +28,11 @@
         android:name="com.example.examnet.ui.quiz.QuizFragment"
         android:label="Fă un test"
         android:layout="@layout/fragment_quiz"/>
+
+    <fragment
+        android:id="@+id/nav_userProfile"
+        android:name="com.example.examnet.ui.userProfile.UserProfileFragment"
+        android:label="Profilul d-voastră"
+        tools:layout="@layout/fragment_user_profile" />
+
 </navigation>

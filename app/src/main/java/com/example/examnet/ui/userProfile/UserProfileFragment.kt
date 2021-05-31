@@ -33,13 +33,13 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*userUsername.text = StaticClass.username
+        userUsername.text = StaticClass.username
         userEmail.text = StaticClass.email
-        userScore.text = StaticClass.scor*/
+        userScore.text = StaticClass.scor
 
-        userUsername.text = "Gigi"
+        /*userUsername.text = "Gigi"
         userEmail.text = "agachi.eusebiu@yahoo.com"
-        userScore.text = "20"
+        userScore.text = "20"*/
 
     }
 

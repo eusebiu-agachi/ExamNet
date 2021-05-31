@@ -31,7 +31,7 @@ class Score : AppCompatActivity() {
 
         val buttonConfirm = findViewById<Button>(R.id.confirm_score)
         buttonConfirm.setOnClickListener {
-            val myPost = ScorePost(email = StaticClass.email, scor = StaticClass.value)
+            /*val myPost = ScorePost(score = StaticClass.value, email = StaticClass.email)
             scoreViewModel.pushPost(myPost)
             scoreViewModel.myResponse.observe(this, Observer { response ->
                 if (response.isSuccessful){
@@ -39,7 +39,7 @@ class Score : AppCompatActivity() {
                     Log.d("cod", response.code().toString())
                     userScore.text = response.body()?.toString()
                 }
-            })
+            })*/
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

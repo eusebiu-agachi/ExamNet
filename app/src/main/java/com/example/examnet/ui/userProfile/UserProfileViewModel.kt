@@ -3,7 +3,6 @@ package com.example.examnet.ui.userProfile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import retrofit2.Response
 
 class UserProfileViewModel() : ViewModel() {
 

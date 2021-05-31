@@ -5,5 +5,5 @@ class loginResponse (
         val username : String,
         val email : String,
         val password : String,
-        val score : String
+        val score : Int
 )

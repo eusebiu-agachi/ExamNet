@@ -16,7 +16,7 @@ class ScoreViewModel (private val repository : ScoreRepository) : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    val myResponse: MutableLiveData<Response<String>> = MutableLiveData()
+    val myResponse: MutableLiveData<Response<Int>> = MutableLiveData()
 
     fun pushPost(post : ScorePost) {
         viewModelScope.launch {

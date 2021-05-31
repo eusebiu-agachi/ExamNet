@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class ScoreRepository {
 
-    suspend fun pushPost(post : ScorePost): Response<String> {
+    suspend fun pushPost(post : ScorePost): Response<Int> {
         return ScoreRetrofitInstance.api.pushPost(post)
     }
 }

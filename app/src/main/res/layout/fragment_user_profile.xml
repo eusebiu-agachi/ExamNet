@@ -9,20 +9,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#caf0f8"
-        tools:context = ".MainActivity" >
+        tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/userProfileTitlu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="Informatii cont"
+            android:text="Informații cont"
             android:textColor="#03045e"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginLeft="100dp"
 
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,10 +46,13 @@
             android:id="@+id/userProfileIconUsername"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintStart_toStartOf="@+id/userProfileTitlu"
-            app:layout_constraintTop_toBottomOf="@+id/userProfileTitlu"
-            app:srcCompat="@drawable/ic_baseline_person" />
+            android:layout_marginLeft="50dp"
+            app:srcCompat="@drawable/ic_baseline_person"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="148dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userProfileTitlu"
+            android:layout_marginTop="50dp"/>
 
         <ImageView
             android:id="@+id/userProfileIconEmail"
@@ -65,12 +67,12 @@
             android:id="@+id/userProfileUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
-            android:text="Username"
+            android:text="Numele de utilizator"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconUsername"
             app:layout_constraintTop_toTopOf="@+id/userProfileIconUsername" />
 
@@ -87,12 +89,12 @@
             android:id="@+id/userProfileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:text="Email"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconEmail"
             app:layout_constraintTop_toTopOf="@+id/userProfileIconEmail" />
 
@@ -100,11 +102,11 @@
             android:id="@+id/userProfileScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text="Scor"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconScore"
             app:layout_constraintTop_toTopOf="@+id/userProfileIconScore" />
 
@@ -112,31 +114,37 @@
             android:id="@+id/userUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text=""
+            android:textColor="@color/black"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/userProfileIconUsername"
-            app:layout_constraintStart_toEndOf="@+id/userProfileIconUsername"
-            android:layout_marginLeft="50dp" />
+            app:layout_constraintStart_toEndOf="@+id/userProfileIconUsername" />
 
         <TextView
             android:id="@+id/userEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text=""
+            android:textColor="@color/black"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/userProfileIconEmail"
-            app:layout_constraintStart_toEndOf="@+id/userProfileIconEmail"
-            android:layout_marginLeft="50dp" />
+            app:layout_constraintStart_toEndOf="@+id/userProfileIconEmail" />
 
         <TextView
             android:id="@+id/userScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text=""
+            android:textColor="@color/black"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/userProfileIconScore"
-            app:layout_constraintStart_toEndOf="@+id/userProfileIconScore"
-            android:layout_marginLeft="50dp" />
+            app:layout_constraintStart_toEndOf="@+id/userProfileIconScore" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

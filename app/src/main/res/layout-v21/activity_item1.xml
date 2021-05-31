@@ -2,13 +2,12 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#a9d6e5">
 
         <TextView
@@ -19,7 +18,7 @@
             android:layout_marginTop="46dp"
             android:layout_marginBottom="1419dp"
             android:gravity="center"
-            android:text="Raspunde la urmatoarele intrebari si trimite raspunsurile pentru a vedea la cate ai raspuns corect!"
+            android:text="Răspunde la urmatoarele întrebări și trimite răspunsurile pentru a vedea la câte ai răspuns corect!"
             android:textColor="#14213d"
             android:textSize="20sp"
             android:textStyle="bold|italic"
@@ -33,7 +32,7 @@
             android:id="@+id/enuntProblema1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="160dp"
             android:padding="20dp"
             android:text=""
@@ -48,7 +47,7 @@
             android:id="@+id/groupProblema1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema1"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema1" />
 
         <TextView
             android:id="@+id/enuntProblema2"
@@ -68,7 +67,7 @@
             android:id="@+id/groupProblema2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema2"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema2" />
 
         <TextView
             android:id="@+id/enuntProblema3"
@@ -88,7 +87,7 @@
             android:id="@+id/groupProblema3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema3"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema3" />
 
         <TextView
             android:id="@+id/enuntProblema4"
@@ -108,7 +107,7 @@
             android:id="@+id/groupProblema4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema4"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema4" />
 
         <TextView
             android:id="@+id/enuntProblema5"
@@ -128,7 +127,7 @@
             android:id="@+id/groupProblema5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema5"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema5" />
 
         <TextView
             android:id="@+id/enuntProblema6"
@@ -148,7 +147,7 @@
             android:id="@+id/groupProblema6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema6"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema6" />
 
         <TextView
             android:id="@+id/enuntProblema7"
@@ -168,7 +167,7 @@
             android:id="@+id/groupProblema7"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema7"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema7" />
 
         <TextView
             android:id="@+id/enuntProblema8"
@@ -188,7 +187,7 @@
             android:id="@+id/groupProblema8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema8"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema8" />
 
         <TextView
             android:id="@+id/enuntProblema9"
@@ -208,7 +207,7 @@
             android:id="@+id/groupProblema9"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema9"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema9" />
 
         <TextView
             android:id="@+id/enuntProblema10"
@@ -228,7 +227,7 @@
             android:id="@+id/groupProblema10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/enuntProblema10"></RadioGroup>
+            app:layout_constraintTop_toBottomOf="@id/enuntProblema10" />
 
         <TextView
             android:id="@+id/enuntProblema11"
@@ -272,6 +271,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>

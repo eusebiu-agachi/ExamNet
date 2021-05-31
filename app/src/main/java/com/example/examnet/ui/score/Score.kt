@@ -13,6 +13,7 @@ import com.example.examnet.StaticClass
 import com.example.examnet.ui.score.scoreModel.ScorePost
 import com.example.examnet.ui.score.scoreRepository.ScoreRepository
 import kotlinx.android.synthetic.main.fragment_scope.*
+import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class Score : AppCompatActivity() {
 
@@ -36,6 +37,7 @@ class Score : AppCompatActivity() {
                 if (response.isSuccessful){
                     Log.d("raspuns", response.body().toString())
                     Log.d("cod", response.code().toString())
+                    userScore.text = response.body()?.toString()
                 }
             })
             val intent = Intent(this, MainActivity::class.java)

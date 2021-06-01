@@ -36,11 +36,5 @@ class UserProfileFragment : Fragment() {
         userUsername.text = StaticClass.username
         userEmail.text = StaticClass.email
         userScore.text = StaticClass.scor
-
-        /*userUsername.text = "Gigi"
-        userEmail.text = "agachi.eusebiu@yahoo.com"
-        userScore.text = "20"*/
-
     }
-
 }

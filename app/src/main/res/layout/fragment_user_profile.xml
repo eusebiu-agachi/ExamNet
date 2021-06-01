@@ -47,7 +47,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="50dp"
-            app:srcCompat="@drawable/ic_baseline_person"
+            app:srcCompat="@drawable/ic_action_username"
             tools:layout_editor_absoluteX="50dp"
             tools:layout_editor_absoluteY="148dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
             android:layout_marginTop="25dp"
             app:layout_constraintStart_toStartOf="@+id/userProfileIconUsername"
             app:layout_constraintTop_toBottomOf="@+id/userProfileIconUsername"
-            app:srcCompat="@drawable/ic_baseline_person" />
+            app:srcCompat="@drawable/ic_action_pass" />
 
         <TextView
             android:id="@+id/userProfileUsername"
@@ -71,6 +71,7 @@
             android:layout_marginLeft="20dp"
             android:gravity="center"
             android:text="Numele de utilizator"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconUsername"
@@ -83,7 +84,7 @@
             android:layout_marginTop="25dp"
             app:layout_constraintStart_toStartOf="@+id/userProfileIconEmail"
             app:layout_constraintTop_toBottomOf="@+id/userProfileIconEmail"
-            app:srcCompat="@drawable/ic_baseline_person" />
+            app:srcCompat="@drawable/ic_action_message" />
 
         <TextView
             android:id="@+id/userProfileEmail"
@@ -93,6 +94,7 @@
             android:layout_marginLeft="20dp"
             android:gravity="center"
             android:text="Email"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconEmail"
@@ -105,6 +107,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:text="Scor"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/userProfileIconScore"

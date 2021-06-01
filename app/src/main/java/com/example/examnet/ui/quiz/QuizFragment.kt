@@ -28,21 +28,21 @@ class QuizFragment : Fragment(R.layout.fragment_quiz), ItemsAdapter.ClickListene
         savedInstanceState: Bundle?
     ): View? {
         quizViewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
-        var root = inflater.inflate(R.layout.fragment_quiz, container, false)
-        var textView: TextView = root.findViewById(R.id.text_quiz)
+        val root = inflater.inflate(R.layout.fragment_quiz, container, false)
+        val textView: TextView = root.findViewById(R.id.text_quiz)
         quizViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
     }
 
-    val imagesName = arrayOf(
+    private val imagesName = arrayOf(
         ItemsModel("Biologie"),
         ItemsModel("Matematică"),
         ItemsModel("Informatică")
     )
 
-    val itemsModelList = ArrayList<ItemsModel>()
+    private val itemsModelList = ArrayList<ItemsModel>()
     var itemsAdapter : ItemsAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

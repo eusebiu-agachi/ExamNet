@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -15,11 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
 import com.example.examnet.ui.contact.contactModel.ContactPost
 import com.example.examnet.ui.contact.contactRepository.ContactRepository
-import com.example.examnet.ui.login.loginModel.loginPost
-import com.example.examnet.ui.login.loginRepository.lgnRepository
-import com.example.examnet.ui.login.loginViewModelFactory
 import kotlinx.android.synthetic.main.fragment_contact.*
-import kotlinx.android.synthetic.main.fragment_login.*
 
 class ContactFragment : Fragment() {
 

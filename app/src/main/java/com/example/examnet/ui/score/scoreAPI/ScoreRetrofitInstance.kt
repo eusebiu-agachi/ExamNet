@@ -1,7 +1,5 @@
 package com.example.examnet.ui.score.scoreAPI
 
-import com.example.examnet.ui.contact.contactAPI.ContactSimpleApi
-import com.example.examnet.ui.contact.contactUtil.ContactConstants
 import com.example.examnet.ui.score.scoreUtil.ScoreConstants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ScoreRetrofitInstance {
 
     companion object {
-        val BASE_URL = ""
+        const val BASE_URL = "http://89.137.141.228:8080/user/score"
         private val retrofit by lazy {
             Retrofit.Builder()
                 .baseUrl(ScoreConstants.BASE_URL)

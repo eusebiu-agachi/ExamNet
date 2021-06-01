@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.examnet.R
 import com.example.examnet.ui.domenii.ItemsAdapter.ItemsAdapterVH
 import kotlinx.android.synthetic.main.row_item.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ItemsAdapter
     (var clickListener: ClickListener)
@@ -60,7 +62,7 @@ class ItemsAdapter
                     filterResults.count = itemsModelListFilter.size
                     filterResults.values = itemsModelListFilter
                 } else {
-                    var searchChr = constraint.toString().toLowerCase()
+                    val searchChr = constraint.toString().toLowerCase(Locale.ROOT)
                     val itemModel = ArrayList<ItemsModel>()
 
                     for (item in itemsModelListFilter) {

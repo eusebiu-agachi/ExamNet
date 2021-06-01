@@ -1,6 +1,6 @@
 package com.example.examnet.ui.contact.contactModel
 
-class ContactPost (
+data class ContactPost (
     val username: String,
     val message: String,
     val rating: Int

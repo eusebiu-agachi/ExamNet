@@ -227,9 +227,9 @@ class Matematica : AppCompatActivity() {
             viewModel2.pushPost(responsesArray)
             viewModel2.myResponse2.observe(this, Observer { response ->
                 if(response.isSuccessful) {
-                    Log.d("yey", response.code().toString())
-                    Log.d("scor", response.body().toString())
-                    Log.d("raspunsuri", responsesArray.toString())
+                    Log.d("CodRaspuns", response.code().toString())
+                    Log.d("Scor", response.body().toString())
+                    Log.d("AlegeriUtilizator", responsesArray.toString())
                     score = response.body().toString()
 
                     StaticClass.value = score

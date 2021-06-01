@@ -1,6 +1,5 @@
 package com.example.examnet.ui.domenii.Biologie.biologieApi
 
-import com.example.examnet.ui.domenii.Biologie.Biologie
 import com.example.examnet.ui.domenii.Biologie.biologieModel.BiologieResponse
 import retrofit2.Response
 import retrofit2.http.Body

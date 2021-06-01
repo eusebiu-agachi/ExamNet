@@ -1,7 +1,7 @@
 package com.example.examnet.ui.score.scoreModel
 
-class ScorePost (
-        val score : String,
+data class ScorePost (
+    val score : String,
     val email : String
 
 )

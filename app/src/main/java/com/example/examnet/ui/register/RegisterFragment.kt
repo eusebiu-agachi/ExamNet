@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
-import com.example.examnet.ui.register.registerModel.registerPost
-import com.example.examnet.ui.register.registerRepository.rgstrRepository
+import com.example.examnet.ui.register.registerModel.RegisterPost
+import com.example.examnet.ui.register.registerRepository.RgstrRepository
 import kotlinx.android.synthetic.main.fragment_register.*
 
 class RegisterFragment : Fragment() {
@@ -26,8 +24,8 @@ class RegisterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val repository = rgstrRepository();
-        val viewModelFactory = registerViewModelFactory(repository)
+        val repository = RgstrRepository();
+        val viewModelFactory = RegisterViewModelFactory(repository)
         registerViewModel = ViewModelProvider(this, viewModelFactory).get(RegisterViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_register, container, false)
 
@@ -49,7 +47,7 @@ class RegisterFragment : Fragment() {
 
             val textView = view.findViewById<TextView>(R.id.text_register)
 
-            var myPost = registerPost(username = continut1, email = continut2, password = continut3)
+            val myPost = RegisterPost(username = continut1, email = continut2, password = continut3)
             registerViewModel.pushPost(myPost)
             registerViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
                 if(response.isSuccessful){

@@ -38,7 +38,7 @@ class Biologie : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(BiologieViewModel::class.java)
         viewModel2 = ViewModelProvider(this, viewModelFactory2).get(BiologieViewModel::class.java)
         viewModel.getPost()
-        val responsesArray: ArrayList<String> = arrayListOf("", "", "", "", "", "", "", "", "", "", "")
+        val responsesArray: ArrayList<String> = arrayListOf("","","","","","","","","","","")
         viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 val problemsArray: List<Any> = response.body() as List<Any>
@@ -226,8 +226,9 @@ class Biologie : AppCompatActivity() {
             viewModel2.pushPost(responsesArray)
             viewModel2.myResponse2.observe(this, Observer { response ->
                 if(response.isSuccessful) {
-                    Log.d("yey", response.code().toString())
-                    Log.d("scor", response.body().toString())
+                    Log.d("CodRaspuns", response.code().toString())
+                    Log.d("Scor", response.body().toString())
+                    Log.d("AlegeriUtilizator", responsesArray.toString())
                     score = response.body().toString()
 
                     StaticClass.value = score

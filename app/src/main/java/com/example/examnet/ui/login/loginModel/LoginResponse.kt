@@ -1,6 +1,6 @@
 package com.example.examnet.ui.login.loginModel
 
-class loginResponse (
+data class LoginResponse (
         val id : Int,
         val username : String,
         val email : String,

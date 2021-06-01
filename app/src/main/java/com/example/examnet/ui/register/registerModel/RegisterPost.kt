@@ -1,6 +1,6 @@
 package com.example.examnet.ui.register.registerModel
 
-class registerPost (
+data class RegisterPost (
     val username: String,
     val email: String,
     val password: String

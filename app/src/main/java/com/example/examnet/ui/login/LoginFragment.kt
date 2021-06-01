@@ -6,16 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.examnet.R
 import com.example.examnet.StaticClass
-import com.example.examnet.ui.login.loginModel.loginPost
-import com.example.examnet.ui.login.loginRepository.lgnRepository
+import com.example.examnet.ui.login.loginModel.LoginPost
+import com.example.examnet.ui.login.loginRepository.LgnRepository
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
@@ -27,8 +25,8 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val repository = lgnRepository()
-        val viewModelFactory = loginViewModelFactory(repository)
+        val repository = LgnRepository()
+        val viewModelFactory = LoginViewModelFactory(repository)
         loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_login, container, false)
         val textView: TextView = root.findViewById(R.id.text_login)
@@ -51,16 +49,16 @@ class LoginFragment : Fragment() {
             continut1.replace(" ", "")
             continut2.replace(" ", "")
 
-            val myPost = loginPost(email = continut1, password = continut2)
+            val myPost = LoginPost(email = continut1, password = continut2)
             loginViewModel.pushPost(myPost)
             loginViewModel.myResponse.observe(viewLifecycleOwner, Observer { response ->
                 if (response.isSuccessful){
                     mesaj_login.text = "Autentificare efectuată cu succes!"
-                    Log.d("Response", response.code().toString())
-                    Log.d("parola", response.body()?.password.toString())
-                    Log.d("email", response.body()?.email.toString())
-                    Log.d("username", response.body()?.username.toString())
-                    Log.d("scor", response.body()?.score.toString())
+                    Log.d("CodRaspuns", response.code().toString())
+                    Log.d("Parola", response.body()?.password.toString())
+                    Log.d("Email", response.body()?.email.toString())
+                    Log.d("Username", response.body()?.username.toString())
+                    Log.d("Scor", response.body()?.score.toString())
 
                     StaticClass.email = response.body()?.email.toString()
                     StaticClass.username = response.body()?.username.toString()
@@ -68,8 +66,8 @@ class LoginFragment : Fragment() {
                     }
                 else{
                     mesaj_login.text = "Contul nu există!"
-                    Log.d("Response", response.code().toString())
-                    Log.d("raspuns", response.body().toString())
+                    Log.d("CodRaspuns", response.code().toString())
+                    Log.d("Raspuns", response.body().toString())
                 }
             })
         }

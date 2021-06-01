@@ -13,7 +13,6 @@ import com.example.examnet.StaticClass
 import com.example.examnet.ui.score.scoreModel.ScorePost
 import com.example.examnet.ui.score.scoreRepository.ScoreRepository
 import kotlinx.android.synthetic.main.fragment_scope.*
-import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class Score : AppCompatActivity() {
 
@@ -26,20 +25,19 @@ class Score : AppCompatActivity() {
         val repository = ScoreRepository()
         val viewModelFactory = ScoreViewModelFactory(repository)
         scoreViewModel = ViewModelProvider(this, viewModelFactory).get(ScoreViewModel::class.java)
-
         score.text = StaticClass.value
 
-        val buttonConfirm = findViewById<Button>(R.id.confirm_score)
-        buttonConfirm.setOnClickListener {
-            /*val myPost = ScorePost(score = StaticClass.value, email = StaticClass.email)
+        val myPost = ScorePost(score = StaticClass.value, email = StaticClass.email)
             scoreViewModel.pushPost(myPost)
             scoreViewModel.myResponse.observe(this, Observer { response ->
                 if (response.isSuccessful){
-                    Log.d("raspuns", response.body().toString())
-                    Log.d("cod", response.code().toString())
-                    userScore.text = response.body()?.toString()
+                    Log.d("Raspuns", response.body().toString())
+                    Log.d("Cod", response.code().toString())
                 }
-            })*/
+            })
+
+        val buttonConfirm = findViewById<Button>(R.id.confirm_score)
+        buttonConfirm.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
